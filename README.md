@@ -4,7 +4,12 @@
 
 Built for Imaginathon 2026 — Team Islamabad
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/638628f4-6c29-4650-b4f6-0b7df7d68b33" />
+<img width="1362" height="637" alt="image" src="https://github.com/user-attachments/assets/75be3145-b98e-4527-890f-070a596472a0" />
+
+
+<img width="1364" height="621" alt="image" src="https://github.com/user-attachments/assets/e6d4f784-432b-4308-b1e2-a3b6c71fcd35" />
+
+
 
 
 ## 🚨 The Problem

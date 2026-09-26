@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+/* ── Custom design tokens & Ultra-smooth typography ── */
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+  --color-terra-bg: #030712;
+  --color-terra-card: #0b0f17;
+  --color-terra-border: #1e293b;
+  --color-terra-surface: #111827;
+  --color-terra-green: #059669;
+  --color-terra-cyan: #06b6d4;
+  --color-terra-rose: #e11d48;
+  --color-terra-amber: #d97706;
+  --color-terra-purple: #7c3aed;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #030712;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #059669;
+    color: #ffffff;
+  }
+}
+
+/* ── Ultra-Smooth Glassmorphism & Cards ── */
+.glass-panel {
+  background: rgba(13, 17, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.glass-pill {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Leaflet Dark Theme Customization ── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #06090e !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(11, 15, 23, 0.95) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px !important;
+  line-height: 1.5 !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  font-size: 16px !important;
+  padding: 8px !important;
+  top: 6px !important;
+  right: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f87171 !important;
+  transform: scale(1.1);
+}
+
+/* ── Leaflet Dark Controls & UI ── */
+.leaflet-bar {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 0.875rem !important;
+  overflow: hidden !important;
+}
+
+.leaflet-bar a {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  color: #38bdf8 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: rgba(30, 41, 59, 0.95) !important;
+  color: #34d399 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(3, 7, 18, 0.7) !important;
+  backdrop-filter: blur(8px) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+  border-radius: 0.5rem 0 0 0 !important;
+  padding: 2px 8px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #38bdf8 !important;
+  text-decoration: none !important;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes haloPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+@keyframes sirenGlow {
+  0%, 100% {
+    background-color: rgba(225, 29, 72, 0.9);
+    box-shadow: 0 0 35px rgba(225, 29, 72, 0.8);
+  }
+  50% {
+    background-color: rgba(30, 58, 138, 0.9);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.8);
+  }
+}
+
+@keyframes waterFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-up { animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-toastSlideIn { animation: toastSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-halo { animation: haloPulse 2.2s infinite; }
+.animate-siren-strobe { animation: sirenGlow 0.8s ease-in-out infinite; }
+.animate-float { animation: waterFloat 3s ease-in-out infinite; }
+
+/* ── Typing dots for AI chat ── */
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: dotPulse 1.3s infinite ease-in-out;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.18s; }
+.typing-dot:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ── Custom Smooth Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* ── Gauge Fill Smooth Rise ── */
+.gauge-fill {
+  transform-origin: left;
+  transition: width 0.9s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* ── Urdu Typography Mode ── */
+.lang-ur {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif !important;
+  line-height: 2.1 !important;
+}

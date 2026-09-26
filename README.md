@@ -91,7 +91,7 @@ TerraRescue relies entirely on citizen-generated data, community verification, a
 
 ## 👥 Team
 
-Team Islamabad — Imaginathon 2026
+yume
 
 ## 📄 License
 
